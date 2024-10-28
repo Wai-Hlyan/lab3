@@ -6,13 +6,21 @@ SORT_DESCENDING = 1
 
 def bubble_sort(arr, sorting_order):
 
+    
     # Copy input list to results list
     arr_result = arr.copy()
 
     # Get number of elements in the list
     n = len(arr_result)
 
-    if n < 10:
+    
+    if not all(isinstance(i, int) for i in arr):  
+        return 2
+    elif len(arr) == 0:
+        arr_result = 0
+    elif len(arr) >= 10:
+        arr_result = 1
+    elif len(arr) < 10:
         # Traverse through all array elements
         for i in range(n - 1):
             # range(n) also work but outer loop will
@@ -31,7 +39,7 @@ def bubble_sort(arr, sorting_order):
                         arr_result[j], arr_result[j + 1] = arr_result[j + 1], arr_result[j]
 
                 else:
-                    # Return an empty array
+                    
                     arr_result = []
     else:
         arr_result = -1
