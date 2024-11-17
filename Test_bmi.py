@@ -1,4 +1,4 @@
-from Lab2.bmi import calculate_bmi as bmi  # type: ignore
+from lab2.bmi import calculate_bmi as bmi  # type: ignore
 
 def test_underweight(): 
     assert bmi(1.75, 50) == -1
